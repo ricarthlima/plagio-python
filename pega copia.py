@@ -165,7 +165,11 @@ def formata(lista):
 
 #Função Principal      
 def main(limite):
-    listaArq = os.listdir("arquivos")
+    try:
+        listaArq = os.listdir("arquivos")
+    except:
+        print("Pasta 'arquivos' não encontrada.")
+        return 0
     listaCod = []
     fileErro = open('erros.txt','a')
     for arq in listaArq:
